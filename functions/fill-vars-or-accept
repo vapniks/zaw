@@ -98,7 +98,7 @@ function go-to-next-var() {
     local -a match mbegin mend
     local rrbuffer="${RBUFFER[2,-1]}"
     if [[ "${rrbuffer}" == *${~FILL_VARS_PATTERN}* ]]; then
-        # to match shortest, use variable expantion
+        # to match shortest, use variable explanation
         : "${(S)rrbuffer/*(#b)(${~FILL_VARS_PATTERN})}"
         (( CURSOR += ${mbegin[1]} ))
     else
