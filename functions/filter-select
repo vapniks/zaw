@@ -133,7 +133,7 @@ function filter-select() {
     local selected_index mark_idx_disp hi start end spec
     local desc desc_num desc_disp bounds
 
-    local -a displays matched_desc_keys match mbegin mend outs exit_wigdets
+    local -a displays matched_desc_keys match mbegin mend outs exit_widgets
     local -a init_region_highlight marked_lines
     local -A candidates descriptions matched_descs
 
@@ -158,7 +158,7 @@ function filter-select() {
 
     candidates=()
     descriptions=()
-    exit_wigdets=(accept-line accept-search send-break)
+    exit_widgets=(accept-line accept-search send-break)
 
     while getopts 't:A:d:D:nrme:s:i' opt; do
         case "${opt}" in
@@ -193,7 +193,7 @@ function filter-select() {
                 markable=1
                 ;;
             e)
-                exit_wigdets+="${OPTARG}"
+                exit_widgets+="${OPTARG}"
                 ;;
             s)
                 initbuffer="${OPTARG}"
@@ -264,7 +264,7 @@ function filter-select() {
 
     _filter-select-reset
 
-    exit_pattern="(${(j:|:)exit_wigdets})"
+    exit_pattern="(${(j:|:)exit_widgets})"
 
     while [[ "${bounds}" != ${~exit_pattern} ]]; do
         case "${bounds}" in
