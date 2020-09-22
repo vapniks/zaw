@@ -53,7 +53,7 @@ function zaw-src-ack() {
 
         actions=("zaw-callback-edit-file" "zaw-callback-append-to-buffer")
         act_descriptions=("edit file" "append to edit buffer")
-        options=("-m")
+        #options=("-m")
     else
         return 1
     fi
