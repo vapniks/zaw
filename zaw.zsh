@@ -23,7 +23,7 @@ if is-at-least 4.3.10; then
 else
     local cur_dir="${this_file:h}"
 fi
-fpath+=("${cur_dir}/functions")
+fpath+=("${cur_dir}/functions.zwc")
 
 autoload -U filter-select
 
@@ -111,7 +111,7 @@ function zaw() {
         shift
     fi
 
-    zle -R "now loading ..."
+    #zle -R "now loading ..."
 
     # call source function to generate candidates
     "${func}" "$@"
