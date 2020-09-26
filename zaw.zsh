@@ -238,7 +238,7 @@ function zaw-callback-edit-file() {
 setopt local_options extended_glob
 local src_dir="${cur_dir}/sources" f
 if [[ -d "${src_dir}" ]]; then
-    for f in "${src_dir}"/^*.zwc; do
+    for f in "${src_dir}"/*.zsh; do
         source "${f}"
     done
 fi
